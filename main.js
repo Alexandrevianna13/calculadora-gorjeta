@@ -33,3 +33,15 @@ function removeClassButtonSelected() {
         buttonSelected = null
     }
 }
+
+function calculateresults() {
+    if (bill !== 0 && tipPercentage !== 0 && numberOfPeople !== 0) {
+        let tipAmountStrong = document.querySelector(".amount strong")
+        let tipAmountPerson = bill * tipPercentage / numberOfPeople
+        tipAmountStrong.innerText = `$${tipAmountPerson.toFixed(2)}`
+
+        let totalStrong = document.querySelector(".total strong")
+        let totalPerson = (bill / numberOfPeople) + tipAmountPerson
+        Strongtotal.innerText = `$${totalPerson.toFixed(2)}`
+    }
+}
