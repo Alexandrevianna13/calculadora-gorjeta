@@ -1,7 +1,7 @@
 let bill = 0
 let tippercentage = 0
 let numberOfpeople = 0
-let buttonselected = null
+let buttonSelected = null
 
 function receivebillvalue() {
     bill = document.querySelector("#bill").valueasnumber
@@ -15,10 +15,21 @@ function receivenumberofvalue() {
 function receivetippercentagevalue(value) {
     tippercentage = value / 100
 
-    if(buttonselected !== null) {
-        buttonselected.classList.remove("button-selected")
+    if(buttonSelected !== null) {
+        buttonSelected.classList.remove("button-selected")
     }
 
-    buttonselected = document.querySelector(´#button-${value}´)
-    buttonselected.classList.add("button-selected")
+    buttonSelected = document.querySelector("#button-${value}")
+    buttonSelected.classList.add("button-selected")
+}
+
+function receivecustomtipporcentagevalue() {
+    tippercentage = document.querySelector("#custom-tip").valueasnumber
+}
+
+function removeClassButtonSelected() {
+    if(buttonSelected !== null) {
+        buttonSelected.classList.remove("button-selected")
+        buttonSelected = null
+    }
 }
