@@ -1,23 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
     font-family: "Space Mono", monospace;
 }
 
 :root {
     font-size: 62.5%;
-    --jagged-ice: #c5e4e7;
+    --jagged-ice: #C5E4E7;
     --white: #FFF;
     --sherpa-blue: #004748;
-    --greyish-turquoise: #SE7A7D;
-    --topaz: #26c2ae;
-    --regent-grey: #7f9d9f;
-    --squeeze: #f3f9fa;
-    --beeatle-green: #547b7b;
-    --water-leaf: #9fe8df;
+    --greyish-turquoise: #5E7A7D;
+    --topaz: #26C2AE;
+    --regent-grey: #7F9D9F;
+    --squeeze: #F3F9FA;
+    --beetle-green: #547878;
+    --water-leaf: #9FE8DF;
+
+
 }
 
 body {
@@ -25,13 +27,9 @@ body {
     background: var(--jagged-ice);
 }
 
-main {
-    background: var(--white);
-}
-
 header {
-    padding-top: 5rem;
-    padding-bottom: 4rem;
+    padding: 5rem;
+    padding-bottom: 6rem;
 
     display: flex;
     justify-content: center;
@@ -45,24 +43,25 @@ main {
 }
 
 .info {
-    padding-inline: 0.8rem;   
+    padding-inline: 0.8rem;
 
-    div {
+    div{
         margin-bottom: 3.2rem;
     }
 
-    strong {
-        color: var(--greyish-turquoise)
+    strong{
+        color: var(--greyish-turquoise);
     }
 
-    .input-box {
+    .input-box{
         margin-top: .6rem;
         background: var(--squeeze);
         display: flex;
         align-items: center;
         padding: .6rem 1.8rem;
+        border-radius: .5rem;
 
-        input {
+        input{
             border: none;
             background: transparent;
             text-align: right;
@@ -71,19 +70,19 @@ main {
             outline: none;
             font-weight: 700;
             color: var(--sherpa-blue);
-            border-radius: .5rem;
         }
 
-        input::placeholder{
+        input::placeholder {
             color: var(--sherpa-blue);
             opacity: 0.35;
         }
+
         &:has(input:focus) {
             outline: 2px solid var(--topaz);
         }
     }
 
-    .tip{
+    .tip {
         div {
             margin-top: 1.6rem;
             display: grid;
@@ -99,64 +98,64 @@ main {
                 padding-block: .6rem;
                 border-radius: .5rem;
             }
-            
-
-        }
             .button-selected {
                 background: var(--topaz);
             }
-        input{
-            width: 100%;
-            font-size: 2.4rem;
-            text-align: center;
-            border: none;
-            background: var(--squeeze);
-            border-radius: .5rem;
-            padding-block: 0.6rem;
-            font-weight:700 ;
-            color: var(--sherpa-blue);
-            
-            &:placeholder {
-                color: var(--beeatle-green);
-            }
 
-            &:focus {
-                outline: 2px solid var(--topaz);
+            input {
+                width: 100%;
+                font-size: 2.4rem;
+                text-align: center;
+                border: none;
+                background: var(--squeeze);
+                border-radius: .5rem;
+                padding-block: .6rem;
+                font-weight: 700;
+                color: var(--sherpa-blue);
+                
+                &::placeholder{
+                    color: var(--beetle-green);
+                }
+
+                &:focus {
+                    outline: 2px solid var(--topaz);
+                }
             }
         }
     }
 }
-
 .results {
     background: var(--sherpa-blue);
     border-radius: 1.5rem;
     padding: 2.4rem;
 
-    .amout,
-    .total {
+    .amount,
+    .total{
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 2rem;
 
-        p {
+        p{
             color: var(--white);
             font-weight: 700;
             
 
-            spam{               
+            span {
                 color: var(--regent-grey);
                 font-size: 1.3rem;
             }
         }
 
-        strong {
+        strong{
             color: var(--topaz);
             font-size: 3.2rem;
         }
+
+        
     }
 
-    button {
+    button{
         margin-top: 1.6rem;
         width: 100%;
         background: var(--topaz);
@@ -168,22 +167,22 @@ main {
         font-weight: 700;
         text-transform: uppercase;
     }
+
+    
 }
 
 input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
-display: none;
+    input::-webkit-outer-spin-button {
+        display: none;
 }
 
-@media(min-width: 928px) {
+@media(min-width: 920px) {
     header {
         margin-top: 5rem;
-
     }
-
-    main {
+    main{
         display: flex;
-        max-width: 920px;
+        max-width: 92rem;
         margin-inline: auto;
         padding: 4.8rem;
         border-radius: 2.5rem;
@@ -191,41 +190,37 @@ display: none;
 
         section{
             width: 100%;
+          }
+
         }
-    }
+            .info {
+                .tip div {
+                    grid-template-columns: repeat(3, 1fr);
 
-    .info {
-        .tip div {
-            grid-template-columns: repeat(3, 1fr);
-
-            button:hover {
-                background: var(--water-leaf);
-                cursor: pointer;
-                transition: 0.3s;
+                    button:hover {
+                        background: var(--water-leaf);
+                        cursor: pointer;
+                        transition: .3s;
+                    }
+                }
             }
-        }
-    }
 
-   
 
     .results {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 4rem;
-
-        .amout strong,
+        
+        .amount strong,
         .total strong {
             font-size: 4.8rem;
-
-
         }
+
         button:hover {
             background: var(--water-leaf);
             transition: .3s;
             cursor: pointer;
-
         }
     }
-
 }
